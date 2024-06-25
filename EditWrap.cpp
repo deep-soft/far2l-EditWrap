@@ -1,4 +1,4 @@
-﻿//#include "../../etc/plugs.h"
+//#include "../../etc/plugs.h"
 #include "../far2l/far2sdk/farplug-wide.h"
 
 /*
@@ -684,7 +684,7 @@ SHAREDSYMBOL HANDLE WINAPI OpenPluginW(
 	wi.Pos = -1;
 
 	#ifdef _UNICODE
-	if (psi.AdvControl(PluginNumber, ACTL_GETFARRECT, FADV1988 &rcFar))
+	if (psi.AdvControl(PluginNumber, ACTL_GETFARRECT, FADV1988 &rcFar, 0))
 	{
 		iMaxWidth = rcFar.Right - rcFar.Left;
 		#if !defined(FAR_UNICODE) || (FAR_UNICODE<3000)
@@ -703,7 +703,7 @@ SHAREDSYMBOL HANDLE WINAPI OpenPluginW(
 #endif
 	*/
 	
-	psi.AdvControl(PluginNumber, ACTL_GETWINDOWINFO, FADV1988 &wi);
+	psi.AdvControl(PluginNumber, ACTL_GETWINDOWINFO, FADV1988 &wi, 0);
 	if (wi.Type != WTYPE_EDITOR)
 	{
 		//_ASSERTE(wi.Type != WTYPE_EDITOR);
