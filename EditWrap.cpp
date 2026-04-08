@@ -154,7 +154,7 @@ SHAREDSYMBOL void WINAPI GetPluginInfoW(struct PluginInfo *pi)
 	#else
 		pi->PluginMenuStrings = pszMenu;
 		pi->PluginMenuStringsNumber = 1;
-		pi->Reserved = 0x45644664; // EdFd
+		pi->Reserved0 = 0x45644664; // EdFd
 	#endif
 }
 
